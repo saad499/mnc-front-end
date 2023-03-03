@@ -19,7 +19,7 @@ steps:
     npm -g i gzip-all
     npm install --force
     npm audit fix --force
-    npm run ng -- build --configuration=production
+    ng build --prod
   displayName: 'npm install and build'
 
 - task: CopyFiles@2
