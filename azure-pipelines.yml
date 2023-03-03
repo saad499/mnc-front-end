@@ -20,6 +20,7 @@ steps:
     npm install --force
     npm audit fix --force
     ng build --prod
+    ng version
   displayName: 'npm install and build'
 
 - task: CopyFiles@2
