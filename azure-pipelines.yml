@@ -15,7 +15,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g @angular/cli@11.1.2 && npm config set strict-ssl false
+    npm install -g @angular/cli@latest && npm config set strict-ssl false
     npm -g i gzip-all
     npm install --force
     npm audit fix --force
