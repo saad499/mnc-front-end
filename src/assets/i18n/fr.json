@@ -5,9 +5,9 @@
         "home":"Accueil",
         "cluster":{
             "title":"Le cluster",
-            "mission":"Notre mission",
+            "mission":"Nos missions",
             "succes":"Notre définition de la réussite",
-            "team":"L’équipe MNC",
+            "team":"L'équipe MNC",
             "organisation":"Notre organisation"
         },
         "expertise":{
@@ -35,7 +35,7 @@
             "title":"Rejoindre",
             "pq" : "Pourquoi nous Rejoindre?",
             "bc":"Barème des cotisations",
-            "formad": "Formulaire d’adhésion",
+            "formad": "Formulaire d'adhésion",
             "carr":"Carrière"
         },
         "actualites":{

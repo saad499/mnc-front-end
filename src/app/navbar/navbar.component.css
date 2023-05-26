@@ -11,12 +11,12 @@
 .icon-topnav {
   margin-left: 10px;
 }
-nav {
+/**/nav {
   max-width: 100% !important;
 }
-/* .navbar-brand img {
+ .navbar-brand img {
   height: 100%;
-} */
+} 
 .navbar-nav li {
   text-align: center;
   margin-right: 2px;

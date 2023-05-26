@@ -15,17 +15,25 @@
           background-size: contain;
           background-repeat: no-repeat;">
             <img src="{{this.home_image}}" style="visibility:hidden">
-            <div class="carousel-caption">
+            <div class="carousel-caption" style="position: absolute;
+            top: 43%;
+            left: 50%;
+            width: 70%;
+            transform: translate(-50%, -50%);">
                 <h2 class="title-home">{{'home_actualite.mnc' | translate}}</h2>
                 <button type="button" class="button" routerLink="/adhesion">{{'navbar.joinbutton' | translate}}</button>
 
             </div>
         </div>
-        <div class="carousel-item" *ngFor="let act of actualites" style="  background-image: linear-gradient(
+        <div class="carousel-item" *ngFor="let act of actualites" style="  
+        
+        
+        
+        background-image: linear-gradient(
             rgba(24, 160, 219, 0.2), 
             rgba(24, 160, 219, 0.2)
           ), url({{service.host+act.image.url}});background-size: contain;
-          background-repeat: no-repeat;">
+          background-repeat: no-repeat;   ">
             <img src="{{service.host+act.image.url}}" style="visibility:hidden">
             <div class="carousel-caption">
                 <h5 class="title-home">{{act['home_actualite.titre' | translate]}}</h5>
@@ -104,7 +112,7 @@
     </div>
     </div>
 
-    
+    <!---->
     <div class="miss">
         <div class=" row mission">
             <div class="col-12 text-center my-auto">
@@ -112,43 +120,24 @@
             </div>
         </div>
         <div id="mission" class="carousel slide " data-ride="carousel">
-            <ul class="carousel-indicators">
+            <ul class="carousel-indicators ">
                 <li *ngFor="let miss of missions;let i = index" data-target="#mission" attr.data-slide-to="{{i}}" class="{{i==0?'active':''}}"></li>
-               
             </ul>
             <div class="carousel-inner" *ngIf="missions">
-                <div *ngFor="let miss of missions; let i = index"  class="carousel-item {{i==0?'active':''}}" style="  background-image: linear-gradient(
+                <div *ngFor="let miss of missions; let i = index" class="carousel-item {{i==0?'active':''}}" style="background-image: linear-gradient(
                     rgba(119, 119, 119, 0.2), 
                     rgba(110, 110, 110, 0.2)
                   ), url({{service.host+miss.image.url}});background-size: cover;
                   background-repeat: no-repeat;">
                     <img src="{{service.host+miss.image.url}}" style="visibility:hidden" >
-                    <div class="carousel-caption">
-                        <h2 class="title-home">{{miss['missions.titre' | translate]}}</h2>
+                    <div class="carousel-caption" style="position: absolute;
+                    top: 55%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);">
+                        <h2 class="title-home" >{{miss['missions.titre' | translate]}}</h2>
                     </div>
                 </div>
-                <!-- <div class="carousel-item active">
-                    <img src="../../assets/images/mission/Transformation.png" >
-                    <div class="carousel-caption">
-                        <h2 >TRANSFORMATION</h2>
-                      
-        
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../../assets/images/mission/compétitivité.png" >
-                    <div class="carousel-caption">
-                        <h2 >COMPÉTITIVITÉ</h2>
-        
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../../assets/images/mission/impact.png" >
-                    <div class="carousel-caption">
-                        <h2 >IMPACT</h2>
-        
-                    </div>
-                </div> -->
+                
             </div>
             <a class="carousel-control-prev" href="#mission" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

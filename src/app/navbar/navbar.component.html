@@ -47,9 +47,91 @@
     </div>
 </div>
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand justify-content-start" routerLink="/"><img src="../../assets/images/logo.png" class=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a routerLink="/" class="nav-link forcklick">{{'navbar.home' | translate}}</a>
+            </li>
+          
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.cluster.title' | translate}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item forcklick" routerLink="/missions">{{'navbar.cluster.mission' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/our-deffinition-of-success">{{'navbar.cluster.succes' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/our-team">{{'navbar.cluster.team' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/our-organization">{{'navbar.cluster.organisation' | translate}}</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.expertise.title' | translate}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item forcklick" routerLink="/our-services">{{'navbar.expertise.services' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/our-projects">{{'navbar.expertise.project' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/our-programs">{{'navbar.expertise.programmes' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/fiware">{{'navbar.expertise.Fiware' | translate}}</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >{{'navbar.partentaires.title' | translate}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" *ngIf="partenaires">
+                    <li *ngFor="let p of partenaires"><a class="dropdown-item forcklick" routerLink="/partners" fragment="{{genereurl(p['type_fr'])}}">{{p['partenaires.type' | translate]}}</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.rejcluster.title' | translate}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item forcklick" routerLink="/why-join-us">{{'navbar.rejcluster.pq' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/contribution">{{'navbar.rejcluster.bc' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/adhesion">{{'navbar.rejcluster.formad' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/career">{{'navbar.rejcluster.carr' | translate}}</a></li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.actualites.title' | translate}}</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item forcklick" routerLink="/events">{{'navbar.actualites.event' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/press">{{'navbar.actualites.presse' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/blog">{{'navbar.actualites.blog' | translate}}</a></li>
+                    <li><a class="dropdown-item forcklick" routerLink="/media">Medias</a></li>
+
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.lang.title' | translate}} : <img src="{{langg}}" style="width: 20px;"></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item forcklick" (click)="this.switchlang('fr')"><img src="../../assets/images/icones/fr.png" style="width: 30px;"></a></li>
+                    <li><a class="dropdown-item forcklick" (click)="this.switchlang('en')"><img src="../../assets/images/icones/en.png" style="width: 30px;"></a></li>
+                </ul>
+            </li>
+
+          <li class="nav-item">
+            <input class="search-input empt" type="search" placeholder="&#xF002;" aria-label="Search"
+                        autocomplete="off" (keyup.enter)="search()" id="searchh">
+          </li>
+        </ul>
+        <form class="d-flex ms-auto">
+            <a type="button" class="button-lang forcklick" routerLink="/adhesion">{{'navbar.joinbutton' | translate}}</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+
+<!--
 <nav class="navbar navbar-expand-xl navbar-light bg-white">
     <div class="container">
-        <a class="navbar-brand" routerLink="/"><img src="../../assets/images/logo.png" class=""></a>
+        <a class="navbar-brand justify-content-start" routerLink="/"><img src="../../assets/images/logo.png" class=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <fa-icon [icon]="faBars"></fa-icon>
         </button>
@@ -93,6 +175,9 @@
 
                     </ul>
                 </li>
+
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'navbar.actualites.title' | translate}}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -100,7 +185,6 @@
                         <li><a class="dropdown-item forcklick" routerLink="/press">{{'navbar.actualites.presse' | translate}}</a></li>
                         <li><a class="dropdown-item forcklick" routerLink="/blog">{{'navbar.actualites.blog' | translate}}</a></li>
                         <li><a class="dropdown-item forcklick" routerLink="/media">Medias</a></li>
-
 
                     </ul>
                 </li>
@@ -125,4 +209,4 @@
 
     </div>
 </nav>
- 
+-->

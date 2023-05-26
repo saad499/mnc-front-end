@@ -21,9 +21,9 @@
       </div>
       <div class="col-lg col-sm-6 col-xs-12 seg4" >
         <h3>{{'footer.cnt_title' | translate}}</h3>
-        <a href="mailto:shady@mnc.ma"><fa-icon [icon]="faEnv"></fa-icon> shady@mnc.ma</a>     <br> 
-        <a href="tel:+212700095075"><fa-icon [icon]="faPh"></fa-icon> +212 700 095 075</a>     <br>  
-        <a  style="line-height: 4px;"><fa-icon [icon]="map"></fa-icon> Technopark Route of Nouacer, Angle RS 114 and CT 1029 Casablanca </a>      
+        <a href="mailto:kamal.hajji@mnc.ma"><fa-icon [icon]="faEnv"></fa-icon> kamal.hajji@mnc.ma </a>     <br>
+        <a href="tel:+212760238361"><fa-icon [icon]="faPh"></fa-icon> +212 760 238 361</a>     <br>
+        <a  style="line-height: 4px;"><fa-icon [icon]="map"></fa-icon> Technopark Route of Nouacer, Angle RS 114 and CT 1029 Casablanca </a>
       </div>
       <div class="col-lg col-sm-6 col-xs-12 seg5" >
         <h3>{{'footer.insc_title' | translate}}</h3>
@@ -32,17 +32,17 @@
         <p *ngIf="notdone"><fa-icon [icon]="ndonne"></fa-icon> {{'footer.notdone' | translate}}</p>
         <form [formGroup]="NewsForm" (ngSubmit)="this.captchaaa=true;loadcap()" *ngIf="captchaaa==false && done==notdone" >
           <input type="email"  class="input1" placeholder="Email" formControlName="email" name="email" required>
-          
-          
+
+
         <input type="submit" value="{{'footer.btn_insc' | translate}}" class="input2" [disabled]="NewsForm?.pristine || NewsForm?.invalid">
         <div *ngIf="NewsForm.controls['email']?.invalid && (NewsForm.controls['email']?.dirty || NewsForm.controls['email']?.touched)" class="alertt">
           emal invalid
           <div *ngIf="NewsForm.controls['email'].errors.required">
-            email is required 
+            email is required
           </div>
       </div>
-      </form>  
-        
+      </form>
+
         <form [formGroup]="captchaform" [hidden]="!captchaaa">
           <div class="row">
             <div class="col">
@@ -56,7 +56,7 @@
                 <p id="ctitle">{{'captcha.d' | translate}}</p>
                <input id="input" formControlName="captcha" type="text" maxlength="4" name="input" autocomplete="off" placeholder="{{'captcha.c' | translate}}" required>
                 <button id="submitcap" value="Submit" type="submit" required>{{'captcha.b' | translate}}</button>
-                
+
               </div>
             </div>
         </div>
